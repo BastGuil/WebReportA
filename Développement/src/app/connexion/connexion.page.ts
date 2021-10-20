@@ -40,11 +40,11 @@ export class ConnexionPage implements OnInit {
 
   async wrongPassOrEmail() {
     const alert = await this.alertController.create({
-      header: 'Wrong email address or password',
-      message: 'Please enter valid information',
+      header: 'Identifiant ou mot de passe incorrect',
+      message: 'Veuillez réessayer',
       buttons: [
         {
-          text: 'Okay',
+          text: 'OK',
           handler: () => {
           }
         }
