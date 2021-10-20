@@ -1,0 +1,61 @@
+{
+  "Activities" : {
+    "activité1": {
+      "activity_id" : "activity",
+      "batch_id" : "batch",
+      "description" : "nanana",
+      "end_date" : "26_nov_2021",
+      "job_id" : "job",
+      "preview_cost" : 2000,
+      "preview_time" : 40,
+      "start_date" : "2_nov_2021",
+      "status" : "actif"
+    }
+  },
+  "Batch" : {
+    "batch1": {
+      "batch_id" : "id",
+      "name" : "pierre"
+    }
+    
+  },
+  "Job" : {
+    "job1": {
+      "job_id" : "metier",
+      "manager_id" : "matricule",
+      "name" : "Paul"
+    }
+    
+  },
+  "Project" : {
+    "projet1": {
+      "batchs" : "test",
+      "end_date" : "date de fin",
+      "preview_coast" : "budget prévisionnel\"",
+      "preview_time" : "temps prévu",
+      "project_id" : "identifier projet",
+      "project_manager_id" : "relation",
+      "project_status" : "status du projet",
+      "start_date" : "date de début"
+    }
+    
+  },
+  "Supervisor" : {
+    "superviseur1": {
+      "user_id" : "matricule"
+    }
+    
+  },
+  "description" : "dadadda",
+  "preview_cost" : 2000,
+  "user" : {
+    "user1": {
+      "first_name" : "Jean",
+      "job_id" : "metier",
+      "last_name" : "Dupont",
+      "password" : "toto95000",
+      "status" : "actif",
+      "user_id" : "matricule"
+    }
+  }
+}

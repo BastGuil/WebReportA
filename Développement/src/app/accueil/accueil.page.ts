@@ -13,13 +13,13 @@ export class AccueilPage implements OnInit {
   ngOnInit() {
   }
 
-  disconect()
+  disconnect()
   {
-
+    this.pushTo('',"");
   }
 
-  pushTo(pageUrl: any, recipientUser: string, connectedUser: string, chatter) {
-    this.nav.navigateForward(pageUrl, { state: [recipientUser, connectedUser] });
-};
+  pushTo(pageUrl: any, params: any) {
+    this.nav.navigateForward([pageUrl], { state: params, replaceUrl: true });
+    }
 
 }

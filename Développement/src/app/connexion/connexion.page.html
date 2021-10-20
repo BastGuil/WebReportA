@@ -1,17 +1,19 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>connexion</ion-title>
+    <ion-title>WebReport</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-<ion-input [(ngModel)]="id">
-  id : 
-</ion-input>
-<ion-input [(ngModel)]="password">
-  Mot de passe : 
-</ion-input>
-<ion-button (click)="auth()">
-  Se connecter
-</ion-button>
+  <div class="connexion">
+    <ion-input [(ngModel)]="id">
+      id : 
+    </ion-input>
+    <ion-input  [(ngModel)]="password">
+      Mot de passe : 
+    </ion-input>
+    <ion-button (click)="auth()" expand="block">
+      Se connecter
+    </ion-button>
+  </div>
 </ion-content>
