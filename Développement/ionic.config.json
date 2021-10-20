@@ -1,5 +1,7 @@
 {
   "name": "WebReport",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

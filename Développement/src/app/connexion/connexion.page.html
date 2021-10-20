@@ -5,7 +5,39 @@
 </ion-header>
 
 <ion-content>
- <ion-button (click)="pushTo('/accueil')">
-   GO
- </ion-button>
+<ion-input [(ngModel)]="id">
+  id : 
+</ion-input>
+<ion-input [(ngModel)]="password">
+  Mot de passe : 
+</ion-input>
+<ion-button (click)="auth()">
+  Se connecter
+</ion-button>
 </ion-content>
+
+<!--<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+
+<meta charset="UTF-8">  
+ <title>Authentification</title>  
+ <link rel="stylesheet" type="text/css" href="style.css"/>
+ <script src="connexion.page.ts"></script>
+</head>
+
+<body>
+
+<div id="authentification">  
+ <h1>Authentification</h1>  
+ <form>  
+	 <input type="text" required="required" placeholder="Nom d'utilisateur" name="u"></input>  
+	 <input type="password" required="required" placeholder="Mot the passe" name="p"></input>  
+	 <button class="but" onclick= "auth(u,p)">Connexion</button>  
+ </form>  
+ </div>  
+
+</body>  
+</html>-->
