@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { NavController, AlertController } from '@ionic/angular';
+
 
 @Component({
   selector: 'app-connexion',
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ConnexionPage implements OnInit {
 
-  constructor() { }
+  constructor(public nav: NavController) { }
 
   ngOnInit() {
   }
+
+  pushTo(pageUrl: any, recipientUser: string, connectedUser: string, chatter) {
+    this.nav.navigateForward(pageUrl, { state: [recipientUser, connectedUser] });
+};
 
 }

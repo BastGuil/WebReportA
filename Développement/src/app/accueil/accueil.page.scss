@@ -1,0 +1,48 @@
+#header {
+    background-color:#87CEFA;
+    color:black;
+    text-align:center;
+    margin-top: 1%;
+    padding:8px;
+}
+p{
+    width:30%;
+    height:80px;
+
+    border:solid 2px black;
+    border-radius:10%;
+    font-size:15px;
+    line-height:80px;
+    margin-left: 33%;
+    margin-top: 3%;
+    text-align:center;  
+    float:center;
+    
+}
+
+.header
+{
+    display: flex;
+}
+
+.write
+{
+    padding-left: 5%;
+    font-size: 150%;
+}
+
+.close
+{
+    padding-right: 5%;
+    font-size: 150%;
+}
+
+.title
+{
+    text-align: center;
+}
+
+ion-button
+{
+    width: 70%;
+}

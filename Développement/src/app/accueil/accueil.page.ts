@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NavController, AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-accueil',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AccueilPage implements OnInit {
 
-  constructor() { }
+  constructor(public nav: NavController) { }
 
   ngOnInit() {
   }
+
+  disconect()
+  {
+
+  }
+
+  pushTo(pageUrl: any, recipientUser: string, connectedUser: string, chatter) {
+    this.nav.navigateForward(pageUrl, { state: [recipientUser, connectedUser] });
+};
 
 }

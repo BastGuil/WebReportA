@@ -7,7 +7,7 @@ const routes: Routes = [
     loadChildren: () => import('./connexion/connexion.module').then( m => m.ConnexionPageModule)
   },
   {
-    path: 'accueil',
+    path: 'home',
     loadChildren: () => import('./accueil/accueil.module').then( m => m.AccueilPageModule)
   },
   {
@@ -41,7 +41,12 @@ const routes: Routes = [
   {
     path: 'projet',
     loadChildren: () => import('./projet/projet.module').then( m => m.ProjetPageModule)
+  },
+  {
+    path: 'allouer',
+    loadChildren: () => import('./allouer/allouer.module').then( m => m.AllouerPageModule)
   }
+
 ];
 @NgModule({
   imports: [
