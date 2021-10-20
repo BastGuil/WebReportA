@@ -25,6 +25,26 @@ const routes: Routes = [
   {
     path: 'employe',
     loadChildren: () => import('./employe/employe.module').then( m => m.EmployePageModule)
+  },
+  {
+    path: 'accueil',
+    loadChildren: () => import('./accueil/accueil.module').then( m => m.AccueilPageModule)
+  },
+  {
+    path: 'projets',
+    loadChildren: () => import('./projets/projets.module').then( m => m.ProjetsPageModule)
+  },
+  {
+    path: 'lots',
+    loadChildren: () => import('./lots/lots.module').then( m => m.LotsPageModule)
+  },
+  {
+    path: 'activites',
+    loadChildren: () => import('./activites/activites.module').then( m => m.ActivitesPageModule)
+  },
+  {
+    path: 'archives',
+    loadChildren: () => import('./archives/archives.module').then( m => m.ArchivesPageModule)
   }
 ];
 @NgModule({

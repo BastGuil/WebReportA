@@ -4,17 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { RespoMPageRoutingModule } from './respo-m-routing.module';
+import { ActivitesPageRoutingModule } from './activites-routing.module';
 
-import { RespoMPage } from './respo-m.page';
+import { ActivitesPage } from './activites.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    RespoMPageRoutingModule
+    ActivitesPageRoutingModule
   ],
-  declarations: [RespoMPage]
+  declarations: [ActivitesPage]
 })
-export class RespoMPageModule {}
+export class ActivitesPageModule {}

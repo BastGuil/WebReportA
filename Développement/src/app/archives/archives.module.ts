@@ -4,17 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { SuperviseurPageRoutingModule } from './superviseur-routing.module';
+import { ArchivesPageRoutingModule } from './archives-routing.module';
 
-import { SuperviseurPage } from './superviseur.page';
+import { ArchivesPage } from './archives.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    SuperviseurPageRoutingModule
+    ArchivesPageRoutingModule
   ],
-  declarations: [SuperviseurPage]
+  declarations: [ArchivesPage]
 })
-export class SuperviseurPageModule {}
+export class ArchivesPageModule {}

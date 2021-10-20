@@ -1,19 +1,19 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
-import { RespoMPage } from './respo-m.page';
+import { ArchivesPage } from './archives.page';
 
-describe('RespoMPage', () => {
-  let component: RespoMPage;
-  let fixture: ComponentFixture<RespoMPage>;
+describe('ArchivesPage', () => {
+  let component: ArchivesPage;
+  let fixture: ComponentFixture<ArchivesPage>;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ RespoMPage ],
+      declarations: [ ArchivesPage ],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(RespoMPage);
+    fixture = TestBed.createComponent(ArchivesPage);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));

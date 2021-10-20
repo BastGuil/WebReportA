@@ -4,17 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { RespoLPageRoutingModule } from './respo-l-routing.module';
+import { LotsPageRoutingModule } from './lots-routing.module';
 
-import { RespoLPage } from './respo-l.page';
+import { LotsPage } from './lots.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    RespoLPageRoutingModule
+    LotsPageRoutingModule
   ],
-  declarations: [RespoLPage]
+  declarations: [LotsPage]
 })
-export class RespoLPageModule {}
+export class LotsPageModule {}
