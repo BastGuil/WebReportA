@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "webreport-574b8": {
+      "hosting": {
+        "app": [
+          "webreport-574b8"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "webreport-574b8"
+  }
+}
