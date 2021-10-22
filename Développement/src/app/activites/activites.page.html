@@ -15,24 +15,24 @@
   </ion-fab>
 
   <ion-list>
-    <ion-card button="true">
+    <ion-card *ngFor="let activite of activites" button="true">
       <ion-card-content>
         <ion-grid>
           <ion-row>
-            <h1>Activité 1</h1>
+            <h1>{{activite.Name}}</h1>
           </ion-row><br>
           <ion-row>
             <h2><b>Respo:</b></h2>
-            <h2>Monsieur Dupont</h2>
+            <h2>{{activite.ActivityManagerID}}</h2>
           </ion-row>
           <ion-row>
             <h2><b>Etat:</b></h2>
-            <h2>En cours</h2>
+            <h2>{{activite.ActivityStatus}}</h2>
           </ion-row>
           <br><ion-row>
             <h2><b>BP:</b></h2>
-            <h2> 100€ |</h2>
-            <h2> 10H </h2>
+            <h2> {{activite.ForecastCost}}€ |</h2>
+            <h2> {{activite.ForecastTime}}H </h2>
           </ion-row>
           <ion-row>
             <h2><b>BE:</b></h2>
@@ -40,13 +40,13 @@
             <h2> 10H </h2>
           </ion-row>
           <br><ion-row>
-            <ion-button color="primary">
-              <ion-icon name="eye-outline" (click)="pushTo('/activite')"></ion-icon>
+            <ion-button color="primary" (click)="pushTo('/activite')">
+              <ion-icon name="eye-outline" ></ion-icon>
             </ion-button>
             <ion-button color="success">
               <ion-icon name="pencil-outline"></ion-icon>
             </ion-button>
-            <ion-button color="danger">
+            <ion-button color="danger" (click)="cloturer()">
               <ion-icon name="checkmark-done-outline"></ion-icon>
             </ion-button>
           </ion-row>

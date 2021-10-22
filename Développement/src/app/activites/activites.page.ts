@@ -8,6 +8,30 @@ import { AlertController } from '@ionic/angular';
 })
 export class ActivitesPage implements OnInit {
 
+  activites =[
+    {
+      Name:"Activite 1",
+      ForecastCost:"1200",
+      ForcastTime:"64",
+      ActivityStatus:"En Cours",
+      ActivityManagerID:"Monsieur Dupont",
+    },
+    {
+      Name:"Activite 2",
+      ForecastCost:"3500",
+      ForcastTime:"156",
+      ActivityStatus:"En Cours",
+      ActivityManagerID:"Monsieur Louis",
+    },
+    {
+      Name:"Activite 3",
+      ForecastCost:"2700",
+      ForcastTime:"126",
+      ActivityStatus:"Terminée",
+      ActivityManagerID:"Monsieur Pierre",
+    },
+  ];
+
   constructor(public alertController: AlertController) { }
 
   ngOnInit() {
@@ -108,4 +132,26 @@ export class ActivitesPage implements OnInit {
       await alert.present();
   }
 
+  async cloturer()
+  {
+    const alert = await this.alertController.create({
+      header: "Cloturer l'activité",
+      message: 'Etes-vous sûr de vouloir cloturer cette activité',
+      buttons: [
+        {
+          text: 'Annuler',
+          role: 'cancel',
+          handler: () => {
+            
+          }
+        },
+        {
+          text: 'Oui',
+          handler: () => {
+          }
+        }
+      ]
+    });
+    await alert.present();
+  }
 }

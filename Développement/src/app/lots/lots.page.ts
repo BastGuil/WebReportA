@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AlertController } from '@ionic/angular';
+import { AlertController, NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-lots',
@@ -8,7 +8,32 @@ import { AlertController } from '@ionic/angular';
 })
 export class LotsPage implements OnInit {
 
-  constructor(public alertController: AlertController) { }
+  lots =[
+    {
+      Name:"Lot 1",
+      ForecastCost:"1200",
+      ForcastTime:"64",
+      BatchStatus:"En Cours",
+      BatchManagerID:"Monsieur Dupont",
+    },
+    {
+      Name:"Lot 2",
+      ForecastCost:"3500",
+      ForcastTime:"156",
+      BatchStatus:"En Cours",
+      BatchManagerID:"Monsieur Louis",
+    },
+    {
+      Name:"Lot 3",
+      ForecastCost:"2700",
+      ForcastTime:"126",
+      BatchStatus:"Terminé",
+      BatchManagerID:"Monsieur Pierre",
+    },
+  ];
+
+  constructor(public alertController: AlertController,
+    public nav: NavController) { }
 
   ngOnInit() {
   }
@@ -107,4 +132,31 @@ export class LotsPage implements OnInit {
   
       await alert.present();
   }
+
+  async cloturer()
+  {
+    const alert = await this.alertController.create({
+      header: 'Cloturer le lot',
+      message: 'Etes-vous sûr de vouloir cloturer ce lot',
+      buttons: [
+        {
+          text: 'Annuler',
+          role: 'cancel',
+          handler: () => {
+            
+          }
+        },
+        {
+          text: 'Oui',
+          handler: () => {
+          }
+        }
+      ]
+    });
+    await alert.present();
+  }
+
+  pushTo(pageUrl: any, params: any) {
+    this.nav.navigateForward([pageUrl], { state: params, replaceUrl: true });
+    }
 }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AlertController } from '@ionic/angular';
+import { AlertController, NavController } from '@ionic/angular';
 @Component({
   selector: 'app-projets',
   templateUrl: './projets.page.html',
@@ -7,8 +7,33 @@ import { AlertController } from '@ionic/angular';
 })
 export class ProjetsPage implements OnInit {
 
+  projects =[
+    {
+      Name:"Projet 1",
+      ForecastCost:"1200",
+      ForcastTime:"64",
+      ProjectStatus:"En Cours",
+      ProjectManagerID:"Monsieur Dupont",
+    },
+    {
+      Name:"Projet 2",
+      ForecastCost:"3500",
+      ForcastTime:"156",
+      ProjectStatus:"En Cours",
+      ProjectManagerID:"Monsieur Louis",
+    },
+    {
+      Name:"Projet 3",
+      ForecastCost:"2700",
+      ForcastTime:"126",
+      ProjectStatus:"Terminé",
+      ProjectManagerID:"Monsieur Pierre",
+    },
+  ];
+  
   constructor(
-    public alertController: AlertController
+    public alertController: AlertController,
+    public nav: NavController
   ) { }
 
   ngOnInit() {
@@ -108,5 +133,32 @@ export class ProjetsPage implements OnInit {
   
       await alert.present();
   }
+
+  async cloturer()
+  {
+    const alert = await this.alertController.create({
+      header: 'Cloturer le projet',
+      message: 'Etes-vous sûr de vouloir cloturer ce projet',
+      buttons: [
+        {
+          text: 'Annuler',
+          role: 'cancel',
+          handler: () => {
+            
+          }
+        },
+        {
+          text: 'Oui',
+          handler: () => {
+          }
+        }
+      ]
+    });
+    await alert.present();
+  }
+
+  pushTo(pageUrl: any, params: any) {
+    this.nav.navigateForward([pageUrl], { state: params, replaceUrl: true });
+    }
 
 }
