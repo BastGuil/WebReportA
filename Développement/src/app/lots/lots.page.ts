@@ -12,14 +12,14 @@ export class LotsPage implements OnInit {
     {
       Name:"Lot 1",
       ForecastCost:"1200",
-      ForcastTime:"64",
+      ForecastTime:"64",
       BatchStatus:"En Cours",
       BatchManagerID:"Monsieur Dupont",
     },
     {
       Name:"Lot 2",
       ForecastCost:"3500",
-      ForcastTime:"156",
+      ForecastTime:"156",
       BatchStatus:"En Cours",
       BatchManagerID:"Monsieur Louis",
     },
@@ -32,10 +32,16 @@ export class LotsPage implements OnInit {
     },
   ];
 
+  modify = [];
+
   constructor(public alertController: AlertController,
     public nav: NavController) { }
 
   ngOnInit() {
+      for(var i=0; i<this.lots.length;i++)
+      {
+        this.modify[i]=false;
+      }
   }
 
   async form(name:string,respo:string,description:string, debut,fin,euros:number,heures:number)
@@ -49,7 +55,7 @@ export class LotsPage implements OnInit {
         type: 'text',
         id: 'name-id',
         value: name,
-        placeholder: "Nom:"
+        placeholder: "LL"
       },
       {
         name: 'respo',

@@ -1,12 +1,18 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>lot</ion-title>
     <ion-button slot="start" fill="clear" size="small" color="medium">
       <ion-back-button color="medium" text="" defaultHref="/home"></ion-back-button>
     </ion-button>
+    <ion-title>members</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+  <ion-list>
+    <ion-card *ngFor="let member of members,let i = index">
+      <ion-card-content>
+        <h2>{{member.Name}}</h2>
+      </ion-card-content>
+    </ion-card>
+  </ion-list>
 </ion-content>

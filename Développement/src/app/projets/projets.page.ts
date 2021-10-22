@@ -31,12 +31,16 @@ export class ProjetsPage implements OnInit {
     },
   ];
   
-  constructor(
-    public alertController: AlertController,
-    public nav: NavController
-  ) { }
+  modify = [];
+
+  constructor(public alertController: AlertController,
+    public nav: NavController) { }
 
   ngOnInit() {
+      for(var i=0; i<this.projects.length;i++)
+      {
+        this.modify[i]=false;
+      }
   }
 
   async form(name:string,respo:string,description:string, debut,fin,euros:number,heures:number)
@@ -50,7 +54,7 @@ export class ProjetsPage implements OnInit {
         type: 'text',
         id: 'name-id',
         value: name,
-        placeholder: "Nom:"
+        placeholder: "PPPP"
       },
       {
         name: 'respo',
