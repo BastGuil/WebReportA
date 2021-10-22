@@ -4,9 +4,11 @@
     "\\Développement",
     "\\Développement\\src",
     "\\Développement\\src\\app",
+    "\\Développement\\src\\app\\activite",
+    "\\Développement\\src\\app\\allouer",
     "\\Développement\\src\\app\\connexion",
     "\\Développement\\src\\environments"
   ],
-  "SelectedNode": "\\Développement\\src\\app\\app.module.ts",
+  "SelectedNode": "\\Développement\\src\\app\\connexion\\connexion.page.html",
   "PreviewInSolutionExplorer": false
 }
