@@ -13,4 +13,45 @@
       <ion-icon name="add"></ion-icon>
     </ion-fab-button>
   </ion-fab>
+
+  <ion-list>
+    <ion-card button="true">
+      <ion-card-content (click)="pushTo('/projet',item)">
+        <ion-grid>
+          <ion-row>
+            <h1>Activité 1</h1>
+          </ion-row><br>
+          <ion-row>
+            <h2><b>Respo:</b></h2>
+            <h2>Monsieur Dupont</h2>
+          </ion-row>
+          <ion-row>
+            <h2><b>Etat:</b></h2>
+            <h2>En cours</h2>
+          </ion-row>
+          <br><ion-row>
+            <h2><b>BP:</b></h2>
+            <h2> 100€ |</h2>
+            <h2> 10H </h2>
+          </ion-row>
+          <ion-row>
+            <h2><b>BP:</b></h2>
+            <h2> 100€ |</h2>
+            <h2> 10H </h2>
+          </ion-row>
+          <br><ion-row>
+            <ion-button color="primary">
+              <ion-icon name="eye-outline" (click)="pushTo('/heures')"></ion-icon>
+            </ion-button>
+            <ion-button color="success">
+              <ion-icon name="pencil-outline" (click)="pushTo('/heures')"></ion-icon>
+            </ion-button>
+            <ion-button color="danger">
+              <ion-icon name="checkmark-done-outline" (click)="pushTo('/heures')"></ion-icon>
+            </ion-button>
+          </ion-row>
+        </ion-grid>
+      </ion-card-content>
+    </ion-card>
+  </ion-list>
 </ion-content>
