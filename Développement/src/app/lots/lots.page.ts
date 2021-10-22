@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AlertController, NavController } from '@ionic/angular';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-lots',
@@ -35,7 +36,7 @@ export class LotsPage implements OnInit {
   modify = [];
 
   constructor(public alertController: AlertController,
-    public nav: NavController) { }
+    public router: Router) { }
 
   ngOnInit() {
       for(var i=0; i<this.lots.length;i++)
@@ -163,6 +164,6 @@ export class LotsPage implements OnInit {
   }
 
   pushTo(pageUrl: any, params: any) {
-    this.nav.navigateForward([pageUrl], { state: params, replaceUrl: true });
+    this.router.navigate([pageUrl], { state: params, replaceUrl: false });
     }
 }

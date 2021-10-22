@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AlertController, NavController } from '@ionic/angular';
+import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-projets',
   templateUrl: './projets.page.html',
@@ -34,7 +36,7 @@ export class ProjetsPage implements OnInit {
   modify = [];
 
   constructor(public alertController: AlertController,
-    public nav: NavController) { }
+    public router: Router) { }
 
   ngOnInit() {
       for(var i=0; i<this.projects.length;i++)
@@ -162,7 +164,7 @@ export class ProjetsPage implements OnInit {
   }
 
   pushTo(pageUrl: any, params: any) {
-    this.nav.navigateForward([pageUrl], { state: params, replaceUrl: true });
+    this.router.navigate([pageUrl], { state: params, replaceUrl: false });
     }
 
 }
