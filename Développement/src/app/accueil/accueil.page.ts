@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController, AlertController } from '@ionic/angular';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-accueil',
@@ -8,7 +9,7 @@ import { NavController, AlertController } from '@ionic/angular';
 })
 export class AccueilPage implements OnInit {
 
-  constructor(public nav: NavController) { }
+  constructor(public router: Router) { }
 
   ngOnInit() {
   }
@@ -19,7 +20,7 @@ export class AccueilPage implements OnInit {
   }
 
   pushTo(pageUrl: any, params: any) {
-    this.nav.navigateForward([pageUrl], { state: params, replaceUrl: true });
+    this.router.navigate([pageUrl], { state: params, replaceUrl: false });
     }
 
 }

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { NavController, AlertController } from '@ionic/angular';
+import { Router } from '@angular/router';
 
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 
@@ -15,14 +16,14 @@ export class ConnexionPage implements OnInit {
   
   constructor(public afAuth: AngularFireAuth,
       public alertController: AlertController,  
-      public nav: NavController) { }
+      public router: Router) { }
   
 
   ngOnInit() {
   }
 
   pushTo(pageUrl: any, params: any) {
-    this.nav.navigateForward([pageUrl], { state: params, replaceUrl: true });
+    this.router.navigate([pageUrl], { state: params, replaceUrl: true });
     }
 
   async auth(){

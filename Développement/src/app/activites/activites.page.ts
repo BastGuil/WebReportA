@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { AlertController } from '@ionic/angular';
+import { AlertController, NavController } from '@ionic/angular';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-activites',
@@ -12,14 +13,14 @@ export class ActivitesPage implements OnInit {
     {
       Name:"Activite 1",
       ForecastCost:"1200",
-      ForcastTime:"64",
+      ForecastTime:"64",
       ActivityStatus:"En Cours",
       ActivityManagerID:"Monsieur Dupont",
     },
     {
       Name:"Activite 2",
       ForecastCost:"3500",
-      ForcastTime:"156",
+      ForecastTime:"156",
       ActivityStatus:"En Cours",
       ActivityManagerID:"Monsieur Louis",
     },
@@ -32,9 +33,16 @@ export class ActivitesPage implements OnInit {
     },
   ];
 
-  constructor(public alertController: AlertController) { }
+  modify = [];
+
+  constructor(public alertController: AlertController,
+    public router: Router) { }
 
   ngOnInit() {
+      for(var i=0; i<this.activites.length;i++)
+      {
+        this.modify[i]=false;
+      }
   }
 
   async form(name:string,respo:string,description:string, debut,fin,euros:number,heures:number)
@@ -48,7 +56,7 @@ export class ActivitesPage implements OnInit {
         type: 'text',
         id: 'name-id',
         value: name,
-        placeholder: "Nom:"
+        placeholder: "AA"
       },
       {
         name: 'respo',
@@ -154,4 +162,8 @@ export class ActivitesPage implements OnInit {
     });
     await alert.present();
   }
+
+  pushTo(pageUrl: any, params: any) {
+    this.router.navigate([pageUrl], { state: params, replaceUrl: false });
+    }
 }

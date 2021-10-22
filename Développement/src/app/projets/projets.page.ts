@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AlertController, NavController } from '@ionic/angular';
+import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-projets',
   templateUrl: './projets.page.html',
@@ -31,12 +33,16 @@ export class ProjetsPage implements OnInit {
     },
   ];
   
-  constructor(
-    public alertController: AlertController,
-    public nav: NavController
-  ) { }
+  modify = [];
+
+  constructor(public alertController: AlertController,
+    public router: Router) { }
 
   ngOnInit() {
+      for(var i=0; i<this.projects.length;i++)
+      {
+        this.modify[i]=false;
+      }
   }
 
   async form(name:string,respo:string,description:string, debut,fin,euros:number,heures:number)
@@ -50,7 +56,7 @@ export class ProjetsPage implements OnInit {
         type: 'text',
         id: 'name-id',
         value: name,
-        placeholder: "Nom:"
+        placeholder: "PPPP"
       },
       {
         name: 'respo',
@@ -158,7 +164,7 @@ export class ProjetsPage implements OnInit {
   }
 
   pushTo(pageUrl: any, params: any) {
-    this.nav.navigateForward([pageUrl], { state: params, replaceUrl: true });
+    this.router.navigate([pageUrl], { state: params, replaceUrl: false });
     }
 
 }

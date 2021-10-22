@@ -15,36 +15,43 @@
   </ion-fab>
 
   <ion-list>
-    <ion-card *ngFor="let lot of lots" button="true">
+    <ion-card *ngFor="let lot of lots,let i = index">
       <ion-card-content>
         <ion-grid>
+          <h1 *ngIf="modify[i]" >Modifier:</h1>
           <ion-row>
-            <h1 *ngIf="mo">{{lot.Name}}</h1>
+            <h1 *ngIf="!modify[i]">{{lot.Name}}</h1>
           </ion-row><br>
+          <ion-input [(ngModel)]="lot.Name" *ngIf="modify[i]" value="{{lot.Name}}">Name: </ion-input>
           <ion-row>
-            <h2><b>Respo:</b></h2>
-            <h2>{{lot.BatchManagerID}}</h2>
+            <h2 *ngIf="!modify[i]"><b>Respo:</b></h2>
+            <h2 *ngIf="!modify[i]">{{lot.BatchManagerID}}</h2>
           </ion-row>
+          <ion-input [(ngModel)]="lot.BatchManagerID" *ngIf="modify[i]" value="{{lot.BatchManagerID}}">Respo: </ion-input>
           <ion-row>
-            <h2><b>Etat:</b></h2>
-            <h2>{{lot.BatchStatus}}</h2>
+            <h2 *ngIf="!modify[i]"><b>Etat:</b></h2>
+            <h2 *ngIf="!modify[i]">{{lot.BatchStatus}}</h2>
           </ion-row>
+          <ion-input [(ngModel)]="lot.BatchStatus" *ngIf="modify[i]" value="{{lot.BatchStatus}}">Etat: </ion-input>
           <br><ion-row>
-            <h2><b>BP:</b></h2>
-            <h2> {{lot.ForecastCost}}€ |</h2>
-            <h2> {{lot.ForecastTime}}H </h2>
+            <h2 *ngIf="!modify[i]"><b>BP:</b></h2>
+            <h2 *ngIf="!modify[i]"> {{lot.ForecastCost}}€ |</h2>
+            <h2 *ngIf="!modify[i]"> {{lot.ForecastTime}}H </h2>            
           </ion-row>
+          <ion-input [(ngModel)]="lot.ForecastCost" *ngIf="modify[i]" value="{{lot.ForecastCost}}">BP (€): </ion-input>
+          <ion-input [(ngModel)]="lot.ForecastTime" *ngIf="modify[i]" value="{{lot.ForecastTime}}">BP (H):</ion-input>
           <ion-row>
             <h2><b>BE:</b></h2>
             <h2> 100€ |</h2>
             <h2> 10H </h2>
           </ion-row>
           <br><ion-row>
-            <ion-button color="primary" (click)="pushTo('/lot')">
+            <ion-button color="primary" (click)="pushTo('/activites')">
               <ion-icon name="eye-outline" ></ion-icon>
             </ion-button>
-            <ion-button color="success">
-              <ion-icon name="pencil-outline"></ion-icon>
+            <ion-button color="success" (click)="modify[i]=!modify[i]">
+              <ion-icon *ngIf="!modify[i]" name="pencil-outline"></ion-icon>
+              <b *ngIf="modify[i]">OK</b>
             </ion-button>
             <ion-button color="danger" (click)="cloturer()">
               <ion-icon name="checkmark-done-outline"></ion-icon>

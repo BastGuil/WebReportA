@@ -27,25 +27,17 @@ const routes: Routes = [
     loadChildren: () => import('./archives/archives.module').then( m => m.ArchivesPageModule)
   },
   {
-    path: 'activite',
-    loadChildren: () => import('./activite/activite.module').then( m => m.ActivitePageModule)
-  },
-  {
     path: 'heures',
     loadChildren: () => import('./heures/heures.module').then( m => m.HeuresPageModule)
   },
   {
-    path: 'lot',
-    loadChildren: () => import('./lot/lot.module').then( m => m.LotPageModule)
-  },
-  {
-    path: 'projet',
-    loadChildren: () => import('./projet/projet.module').then( m => m.ProjetPageModule)
-  },
-  {
     path: 'allouer',
     loadChildren: () => import('./allouer/allouer.module').then( m => m.AllouerPageModule)
+  },  {
+    path: 'members',
+    loadChildren: () => import('./members/members.module').then( m => m.MembersPageModule)
   }
+
 
 ];
 @NgModule({
