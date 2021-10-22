@@ -10,10 +10,10 @@
 <ion-content>
   <ion-list>
     <ion-card button="true">
-      <ion-card-content (click)="pushTo('/projet',item)">
+      <ion-card-content>
         <ion-grid>
           <ion-row>
-            <h1>Projet 1</h1>
+            <h1>Activité 1</h1>
           </ion-row><br>
           <ion-row>
             <h2><b>Respo:</b></h2>
@@ -29,13 +29,13 @@
             <h2> 10H </h2>
           </ion-row>
           <ion-row>
-            <h2><b>BP:</b></h2>
+            <h2><b>BE:</b></h2>
             <h2> 100€ |</h2>
             <h2> 10H </h2>
           </ion-row>
           <br><ion-row>
-            <ion-button color="success">
-              <ion-icon name="pencil-outline" (click)="pushTo('/heures')"></ion-icon>
+            <ion-button expand="block" color="success">
+              Attribuer
             </ion-button>
           </ion-row>
         </ion-grid>
